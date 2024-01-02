@@ -1,0 +1,524 @@
+@font-face {
+  font-family: 'Black';
+  src: url('fonts/Roboto-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url('fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BoldItalic';
+  src: url('fonts/Roboto-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Italic';
+  src: url('fonts/Roboto-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Light';
+  src: url('fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LightItalic';
+  src: url('fonts/Roboto-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+body, html {
+  font-family: 'Light', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+body > .menu-container{
+  display: inline-block;
+}
+
+/*
+===========================
+PARA WINDOWS
+===========================
+*/
+
+#title-bar {
+  -webkit-app-region: drag;
+  height: 40px;
+  width: 100%;
+  background-color: #151515;
+  padding: none;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+} 
+
+#title {
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #eee;
+  position: fixed;
+  top: 12px;
+  left: 15px; 
+}
+  
+#title-bar-btns {
+  margin: 0px;
+  height: 40px;
+  width: 150px;
+  padding: 0;
+  -webkit-app-region: no-drag;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+
+
+#min-btn{
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  width: 50px;
+  background-color: #151515;
+  padding-bottom: 15px;
+  border-radius: 0;
+}
+
+#max-btn{
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  width: 50px;
+  background-color: #151515;
+  border-radius: 0;
+}
+
+#close-btn{
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  width: 50px;
+  background-color: #151515;
+  border-radius: 0;
+}
+
+#min-btn:hover,
+#max-btn:hover{
+  background-color: #282828;
+}
+
+#close-btn:hover{
+  background-color: #EB3131;
+}
+
+/*
+===========================
+PARA WINDOWS
+https://mylifeforthecode.github.io/making-the-electron-shell-as-pretty-as-the-visual-studio-shell/
+https://stackoverflow.com/questions/35876939/frameless-window-with-controls-in-electron-windows
+===========================
+*/
+
+.landing{
+  display: flex;
+  flex-direction: column;
+  gap: 0 em;
+}
+
+div > h1 {
+  margin-bottom: 0.2em;
+}
+
+div > p {
+  margin-top: 0.2em;
+}
+
+h1{
+  font-family: 'Bold', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 100px;
+  letter-spacing: 13px;
+}
+
+p{
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 25px;
+}
+
+.menu-container{
+  display: flex;
+  float: left;
+  height: 100vh;
+  width: 33%;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #eee;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100%;
+}
+
+
+.tabs {
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  list-style: none;
+  display: flex;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  flex-grow: 1;
+  flex: 0 0 33%;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tab {
+  background-color: #2c2c2c;
+  color: #807e7e;
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-items: center;
+  padding: 0% 1% 0% 1%;
+  margin: 7px;
+  height: 40px;
+  width: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding-left: 12px;
+  cursor: pointer;
+}
+
+.tab-content.active {
+  display: contents;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-container{
+  display: flex;
+  float: 1;
+  background-color: #2c2c2c;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #cacaca;
+  color: #2c2c2c;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 80vh;
+  max-width: 80vh;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  overflow-y: auto;
+  padding-left: 5%;
+}
+
+.input-pair{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+}
+
+input, select{
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #2c2c2c;
+  background-color: #eee;
+  border: 2px solid #eee;
+  height: 20px;
+  outline: none;
+  border-radius: 5px;
+  width: 50vh;
+  margin: 10px;
+  flex: 1;
+}
+
+select{
+  height: 28px;
+}
+
+input:focus{
+  border: 2px solid #65bee5;
+}
+
+label{
+  font-family: 'Regular', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  flex: 1;
+  justify-self: left;
+  text-align: left;
+}
+
+.radio-group{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.radio-options{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.radio-group label{
+  align-self: center;
+}
+
+.separador{
+  width: 100%;
+  height: 2px;
+  background-color: rgb(174, 172, 172);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#cuales-tab3{
+  font-family: 'Bold', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.biomarker-box{
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.biomarker{
+  justify-content: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.biomarker select{
+  width: 30%;
+  flex-grow: 2;
+}
+
+.biomarker input{
+  width: 20%;
+  flex-grow: 0.1;
+}
+
+
+.biomarker label{
+  width: 20%;
+  flex-grow: 1;
+}
+
+.biomarker-result{
+  width: 72%;
+  align-items: center;
+  display: flex;
+}
+
+#cual_otro{
+  flex-grow: 2;
+  width: 30%;
+}
+
+label[for="cual_otro"]{
+  display: flex;
+}
+
+.otro{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.resultado-otro{
+  width: 50%;
+}
+
+.resul-otro{
+  width: 32%;
+}
+
+.resultado-otro select{
+  flex: 1;
+  width: 90%;
+}
+
+.radio-group-tab4{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.radio-group-tab4 label{
+  align-self: center;
+}
+
+.tumor-localizado{
+  width: 100%;
+  flex-direction: column;
+}
+
+.mhspc{
+  width: 100%;
+  flex-direction: column;
+}
+
+.mcrpc_2l{
+  width: 100%;
+  flex-direction: column;
+}
+
+.mcrpc_3l{
+  width: 100%;
+  flex-direction: column;
+}
+
+.nmcrpc{
+  width: 100%;
+  flex-direction: column;
+}
+
+.hospitalizacion{
+  width: 100%;
+  flex-direction: column;
+}
+
+.fracturas{
+  width: 100%;
+  flex-direction: column;
+}
+
+.urgencias{
+  width: 100%;
+  flex-direction: column;
+}
+
+.prog1{
+  width: 100%;
+  flex-direction: column;
+}
+
+.prog2{
+  width: 100%;
+  flex-direction: column;
+}
+
+#tab5 .input-pair,
+#tab6 .input-pair,
+#tab7 .input-pair,
+#tab8 .input-pair,
+#tab9 .input-pair,
+#tab10 .input-pair,
+#tab11 .input-pair,
+#tab12 .input-pair{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#tab5 .radio-group,
+#tab9 .radio-group,
+#tab10 .radio-group,
+#tab11 .radio-group{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#radio-hosp1,
+#radio-hosp2{
+  align-items: center;
+}
+
+.btn-box{
+  justify-content: right;
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+}
+
+button{
+  align-self: center;
+  margin: 0px 20px 0px 20px;
+  padding: 10px;
+  height: 40px;
+  width: 250px;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #659fd3;
+  border: #659fd3;
+}
+
+#save{
+  float: left;
+  margin-left: 8%;
+}
+
+#excel{
+  float: right;
+  margin-left: auto;
+}
+
+button:hover{
+  background-color: #65bee5;
+}
+
+.campo-invalido:invalid{
+  border: 2px solid red;
+}
+
+
+span {
+  color: red;
+}

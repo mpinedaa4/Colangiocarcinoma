@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Colangiocarcinoma</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!--
+  ========================
+  PARA MODIFICAR EN WINDOWS
+  =========================
+  -->
+  <div id="title-bar">
+    <div id="title">Colangiocarcinoma</div>
+    <div id="title-bar-btns">
+      <button id="min-btn">&#95;</button>
+      <button id="max-btn">&#8601;</button>
+      <button id="close-btn">&#10007;</button>
+    </div>
+  </div>
+      <!--
+    ========================
+    PARA MODIFICAR EN WINDOWS
+    =========================
+    -->
+    <div class="menu-container">
+      <ul class="tabs">
+        <li class="tab"><a href="#tab1">Sociodemográfico</a></li>
+        <li class="tab"><a href="#tab2">Tumor</a></li>
+        <li class="tab"><a href="#tab3">Biomarcadores</a></li>
+        <li class="tab"><a href="#tab4">Tratamiento Inicial</a></li>
+        <li class="tab"><a href="#tab5">Progresión/Recaída</a></li>
+        <li class="tab"><a href="#tab6">Estado vital</a></li>
+      </ul>
+    </div>
+
+    <form class="form-container" id="main-form">
+      <div class="landing">
+        <h1>Bienvenido</h1>
+        <p>Para iniciar, debes dar click en los botones de la izquierda</p>
+      </div>
+      <div id="tab1" class="tab-content active">
+        <div class="box">
+          <div class="input-pair">
+            <label for="consecutivo">Consecutivo:<span> *</span></label>
+            <input type="number" name="consecutivo" id="consecutivo" value="" inputmode="numeric" required>
+          </div>
+
+          <div class="input-pair">
+            <label for="iniciales">Iniciales:<span> *</span></label>
+            <input type="text" name="iniciales" id="iniciales" required>
+          </div>
+
+          <div class="input-pair">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo">
+              <option value=""></option>
+              <option value="Mujer">Mujer</option>
+              <option value="Hombre">Hombre</option>
+            </select>
+          </div>
+          
+          <div class="input-pair">
+            <label for="año_nacimiento">Año de nacimiento:<span> *</span></label>
+            <input type="number" name="año_nacimiento" id="yearOfBirth" min="1900" max="2099" required>
+          </div>
+            
+          <div class="input-pair">
+            <label for="regimen">Afiliación al sistema de salud:</label>
+            <select id="regimen" name="regimen">
+              <option value=""></option>
+              <option value="Contributivo">Régimen contributivo</option>
+              <option value="Subsidiado">Régimen subsidiado</option>
+              <option value="Especial">Régimen especial</option>
+              <option value="Póliza">Asegurador privado de salud</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab2" class="tab-content">
+        <div class="box">
+          <div class="input-pair">
+            <label for="fecha_dx">Fecha de diagnóstico del colangiocarcinoma:<span> *</span></label>
+            <input type="date" name="fecha_dx" id="fecha_dx" required>
+          </div>
+
+          <div class="input-pair">
+            <label for="histologia">Histología:</label>
+            <select id="histologia" name="histologia">
+              <option value=""></option>
+              <option value="Adenocarcinoma">Adenocarcinoma</option>
+              <option value="Otro">Otro</option>
+              <option value="Desconocido">Desconocido</option>
+            </select>
+          </div>
+          
+          <div class="input-pair">
+            <label for="diferenciacion">Grado de diferenciación:</label>
+            <select id="diferenciacion" name="diferenciacion">
+              <option value=""></option>
+              <option value="Bien diferenciado">Bien diferenciado</option>
+              <option value="Moderadamente diferenciado">Moderadamente diferenciado</option>
+              <option value="Pobremente diferenciado">Pobremente diferenciado</option>
+              <option value="Desconocido">Desconocido</option>
+            </select>
+          </div>
+
+          <div class="input-pair">
+            <label for="localizacion">Localización del tumor:</label>
+            <select id="localizacion" name="localizacion">
+              <option value=""></option>
+              <option value="Colangiocarcinoma intrahepático">Colangiocarcinoma intrahepático</option>
+              <option value="Colangiocarcinoma extrahepático">Colangiocarcinoma extrahepático</option>
+              <option value="Cáncer de vesícula biliar">Cáncer de vesícula biliar</option>
+            </select>
+          </div>
+
+          <div class="input-pair">
+            <label for="tnm">TNM:</label>
+            <input type="text" name="tnm" id="tnm">
+          </div>  
+
+          <div class="input-pair">
+            <label for="estadio">Estadío al diagnóstico:<span> *</span></label>
+            <select id="estadio" name="estadio" required>
+              <option value=""></option>
+              <option value="I">I</option>
+              <option value="II A-B">II A-B</option>
+              <option value="III A-B">III A-B</option>
+              <option value="IV">IV</option>
+            </select>
+          </div>
+
+          <div class="input-pair">
+            <label for="ecog">ECOG al diagnóstico de mCRPC:</label>
+            <input type="number" name="ecog" id="ecog" min="0" max="5">
+          </div>
+      </div>  
+      </div>  
+
+      <div id="tab3" class="tab-content">
+        <div class="box">
+          <div class="input-pair">
+            <label for="ca19">CA 19-9 al diagnóstico:</label>
+            <input type="number" name="ca19" id="ca19" value="" inputmode="numeric" step="0.01">
+          </div>
+
+          <div class="input-pair">
+            <label for="cea">Antígeno carcinoembrionario (CEA) al diagnóstico:</label>
+            <input type="number" name="cea" id="cea" value="" inputmode="numeric" step="0.01">
+          </div>
+            
+          <div class="radio-group">
+            <label for="ngs" id="lbl-ngs">¿Tiene prueba de secuenciación de nueva generación (NGS)?<span> *</span></label>
+            <div class="radio-options">   
+              <input type="radio" id="ngs1" name="ngs" value="Si" required>
+              <label for="ngs1">Sí</label>
+              <input type="radio" id="ngs2" name="ngs" value="No" required>
+              <label for="ngs2">No</label>
+            </div>
+          </div>
+            
+          <div class="input-pair" id="input-pair-ngs">
+            <label for="ngsResult">Resultado del NGS:</label>
+            <select id="ngsResult" name="ngsResult">
+              <option value=""></option>
+              <option value="Terapia dirigida">Orienta a una terapia dirigida</option>
+              <option value="Valor pronóstico">Puede ser de valor pronóstico sin orientar a una terapia dirigida</option>
+              <option value="Negativo">Negativo</option>
+            </select>
+          </div>   
+        </div>
+      </div>
+      
+      <div id="tab4" class="tab-content">
+        <div class="box">
+          <div class="radio-group">
+            <label for="cx" id="lbl-cx">¿Le realizaron cirugía?<span> *</span></label>
+            <div class="radio-options">   
+              <input type="radio" id="cx1" name="cx" value="Si" required>
+              <label for="cx1">Sí</label>
+              <input type="radio" id="cx2" name="cx" value="No" required>
+              <label for="cx2">No</label>
+            </div>
+          </div>
+
+          <div class="input-pair" id="input-pair-fechaCx">
+            <label for="fecha_cx">Fecha de la cirugía:<span> *</span></label>
+            <input type="date" name="fecha_cx" id="fecha_cx">
+          </div>
+
+          <div class="input-pair" id="input-pair-intencion">
+            <label for="intencionCx">Intención de la cirugía:</label>
+            <select id="intencionCx" name="intencionCx">
+              <option value=""></option>
+              <option value="Curativa">Curativa</option>
+              <option value="Paliativa">Paliativa</option>
+              <option value="Desconocido">Desconocido</option>
+              <option value="No aplica">No aplica</option>
+            </select>
+          </div>
+
+          <div class="radio-group">
+            <label for="sistemico" id="lbl-sistemico">¿Recibió terapia sistémica?<span> *</span></label>
+            <div class="radio-options">   
+              <input type="radio" id="sistemico1" name="sistemico" value="Si" required>
+              <label for="sistemico1">Sí</label>
+              <input type="radio" id="sistemico2" name="sistemico" value="No" required>
+              <label for="sistemico2">No</label>
+            </div>
+          </div>
+
+          <div class="input-pair" id="input-nombre-terapia">
+            <label for="nombreTerapia">Nombre de la terapia sistémica:<span> *</span></label>
+            <input type="text" name="nombreTerapia" id="nombreTerapia">
+          </div>
+
+          <div class="input-pair" id="input-fecha-terapia">
+            <label for="fechaTerapia">Fecha de inicio de la terapia sistémica:<span> *</span></label>
+            <input type="date" name="fechaTerapia" id="fechaTerapia">
+          </div>
+
+          <div class="input-pair" id="input-escenario">
+            <label for="escenario">Escenario de la terapia sistémica:</label>
+            <select id="escenario" name="escenario">
+              <option value=""></option>
+              <option value="Neoadyuvancia">Neoadyuvancia</option>
+              <option value="Adyuvancia">Adyuvancia</option>
+              <option value="Primera línea">Primera línea</option>
+              <option value="Tratamiento definitivo">Tratamiento definitivo</option>
+            </select>
+          </div>
+
+          <div class="input-pair">
+            <label for="respuesta">Respuesta al tratamiento:</label>
+            <select id="respuesta" name="respuesta">
+              <option value=""></option>
+              <option value="Enfermedad estable">Enfermedad estable</option>
+              <option value="Respuesta parcial">Respuesta parcial</option>
+              <option value="Respuesta completa">Respuesta completa</option>
+              <option value="Progresión de la enfermedad">Progresión de la enfermedad</option>
+              <option value="Desconocido">Desconocido</option>
+            </select>
+          </div>
+
+          <div class="radio-group">
+            <label for="rxtx" id="lbl-rxtx">¿Recibió radioterapia?<span> *</span></label>
+            <div class="radio-options">   
+              <input type="radio" id="rxtx1" name="rxtx" value="Si" required>
+              <label for="rxtx1">Sí</label>
+              <input type="radio" id="rxtx2" name="rxtx" value="No" required>
+              <label for="rxtx2">No</label>
+            </div>
+          </div>
+
+          <div class="input-pair">
+            <label for="radiocirugia">¿Recibió radiocirugía para el tratamiento de las metástasis?</label>
+            <select id="radiocirugia" name="radiocirugia">
+              <option value=""></option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+              <option value="No aplica">Respuesta completa</option>
+              <option value="Desconocido">Desconocido</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab5" class="tab-content">
+        <div class="box">
+          <div class="radio-group">
+            <label for="progresion">¿Hay evidencia de progresión/recaída?<span> *</span></label>
+            <div class="radio-options">
+              <input type="radio" id="progresion1" name="progresion" value="Si" required>
+              <label for="progresion1">Sí</label>
+              <input type="radio" id="progresion2" name="progresion" value="No">
+              <label for="progresion2">No</label>
+            </div>
+          </div>
+
+          <div class="input-pair" id="fecha-prog">
+            <label for="fechaProgresion">Fecha de la primera progresión o recaída:<span> *</span></label>
+            <input type="date" name="fechaProgresion" id="fechaProgresion">
+          </div>
+
+          <div class="radio-group" id="primera-linea">
+            <label for="primeraLinea">¿El paciente recibió terapia de primera línea?<span> *</span></label>
+            <div class="radio-options">
+              <input type="radio" id="primeraLinea1" name="primeraLinea" value="Si">
+              <label for="primeraLinea1">Sí</label>
+              <input type="radio" id="primeraLinea2" name="primeraLinea" value="No">
+              <label for="primeraLinea2">No</label>
+            </div>
+          </div>
+
+          <div class="input-pair" id="nombre-tto1">
+            <label for="nombreTto1">Nombre de la terapia de primera línea:<span> *</span></label>
+            <input type="text" name="nombreTto1" id="nombreTto1">
+          </div>
+
+          <div class="radio-group" id="segunda-linea">
+            <label for="segundaLinea">¿El paciente recibió terapia de segunda línea?<span> *</span></label>
+            <div class="radio-options">
+              <input type="radio" id="segundaLinea1" name="segundaLinea" value="Si">
+              <label for="segundaLinea1">Sí</label>
+              <input type="radio" id="segundaLinea2" name="segundaLinea" value="No">
+              <label for="segundaLinea2">No</label>
+            </div>
+          </div>
+
+          <div class="input-pair" id="nombre-tto2">
+            <label for="nombreTto2">Nombre de la terapia de segunda línea:<span> *</span></label>
+            <input type="text" name="nombreTto2" id="nombreTto2">
+          </div>
+        </div>
+      </div>  
+
+      <div id="tab6" class="tab-content">
+        <div class="box">
+          <div class="input-pair">
+            <label for="estadoVital">Estado vital:<span> *</span></label>
+            <select id="estadoVital" name="estadoVital" required>
+              <option value=""></option>
+              <option value="Vivo">Vivo</option>
+              <option value="Muerto">Muerto</option>
+              <option value="Pérdida de seguimiento">Pérdida de seguimiento</option>
+            </select>
+          </div>
+
+          <div class="input-pair">
+            <label for="ultimoSeguimiento">Fecha del último seguimiento:<span> *</span></label>
+            <input type="date" name="ultimoSeguimiento" id="ultimoSeguimiento" required>
+          </div>
+
+          <div class="input-pair" id="fecha-muerte">
+            <label for="fechaMuerte">Fecha de muerte:<span> *</span></label>
+            <input type="date" name="fechaMuerte" id="fechaMuerte">
+          </div>
+
+          <div class="input-pair">
+            <label for="observaciones">Observaciones:</label>
+            <input type="text" name="observaciones" id="observaciones">
+          </div>
+
+          <div class="input-pair" id="input-pair-intencion">
+            <label for="sitio">Sitio:</label>
+            <select id="sitio" name="sitio" required>
+              <option value=""></option>
+              <option value="SOHEC">SOHEC</option>
+              <option value="FCTIC">FCTIC</option>
+              <option value="HIC">HIC</option>
+              <option value="HPTU">HPTU</option>
+              <option value="Clínica de Oncología Astorga">Clínica de Oncología Astorga</option>
+            </select>
+        </div>
+
+        <div class="input-pair">
+          <label for="dataEntry">Nombre de quién diligencia:</label>
+          <input type="text" name="dataEntry" id="dataEntry" required>
+        </div>
+
+        </div>
+          <div class="btn-box">
+            <button id="save">Guardar Datos</button>
+            <button id="excel">Abrir excel</button>
+          </div>
+      </div>
+    </form>
+    <script src="renderer.js"></script>
+  </body>
+</html>
